@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div style="display: grid; grid-template-columns: 1fr; margin: 30px;">
+        <div style="margin: auto">
+            <div class="display-4" style="font-size: 30pt; margin: 0 0 20px 0">S'enregistrer</div>
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+    {{ form_row(registrationForm.first_name) }}
+    {{ form_row(registrationForm.last_name) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-primary">S'enregistrer</button>
+    {{ form_end(registrationForm) }}
+            <div>Si vous possédez déjà un compte veuillez vous connecter
+                <a href="{{ path('app_login_new') }}" class="btn btn-primary">Se connecter</a>
+            </div>
+        </div>
+</div>
+{% endblock %}

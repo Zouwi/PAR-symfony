@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    <div class="display-4">Fil d'actualité</div>
+    <br>
+    <div style="display: flex; gap: 30px;">
+        {% for poste in posts %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ poste.content }}</h5>
+                    <p class="card-text">Publié par {{ poste.author }}</p>
+                    <a href="{{ path('app_post_detail', {id:poste.id}) }}" class="btn btn-primary">Voir plus</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="{{ path('app_post_controller_crud_new') }}" class="btn btn-primary">Publier un poste</a>
+    </div>
+{% endblock %}

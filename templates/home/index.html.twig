@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="display-4">Bienvenue sur REHA Réseau d'Entraide des Habitants d'Alsace</div>
+
+    <div class="display-4" style="font-size: 30pt;">Fil d'actualité :</div>
+    <a href="{{ path('app_post') }}" class="btn btn-primary">Les postes</a>
+{% endblock %}
